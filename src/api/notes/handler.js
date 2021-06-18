@@ -12,7 +12,6 @@ class NotesHandler {
     this.deleteNoteByIdHandler = this.deleteNoteByIdHandler.bind(this);
   }
 
-
   async postNoteHandler(request, h) {
     try {
       this._validator.validateNotePayload(request.payload);
@@ -128,7 +127,6 @@ class NotesHandler {
     try {
       const { id } = request.params;
       await this._service.deleteNoteById(id);
-
       return {
         status: 'success',
         message: 'Catatan berhasil dihapus',
