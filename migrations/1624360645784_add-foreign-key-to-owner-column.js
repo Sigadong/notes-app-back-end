@@ -1,12 +1,12 @@
 /* eslint-disable camelcase */
 
-exports.shorthands = undefined;
+// exports.shorthands = undefined;
 
 exports.up = (pgm) => {
   // membuat user baru.
   pgm.sql("INSERT INTO users(id, username, password, fullname) VALUES ('old_notes', 'old_notes', 'old_notes', 'old notes')");
 
-  // mengubah nilai owner pada note yang owner-nya bernilai NULL
+  // mengubah nilai owner pada note yang owner-nya bernilai NULLclear
   pgm.sql("UPDATE notes SET owner = 'old_notes' WHERE owner = NULL");
 
   // memberikan constraint foreign key pada owner terhadap kolom id dari tabel users
